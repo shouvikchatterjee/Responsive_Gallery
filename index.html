@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+<title>Responsive Webpage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">	
+<script>
+$(function(){
+$(".image").click(function(){
+		var val = $(this).attr('id').replace(/[^0-9]/g,'');
+		<!-- var pageWidth = $(".container-fluid").width()+30; -->
+		<!-- var pageHeight = $(".container-fluid").height(); -->
+		<!-- $("#img_holder").show(); -->
+		<!-- $("#img_holder").width(pageWidth); -->
+		<!-- $("#img_holder").height(pageHeight); -->
+		<!-- $("#img_holder").css('margin-left',(-pageWidth/2)); -->
+		<!-- $(".large_img_container").height(pageHeight);		 -->
+		<!-- $("#image_loader").width(pageWidth/2);		 -->
+		$("#image_loader").html("<img class='img-fluid img-thumbnail' src='images/"+val+".png'/>");
+});
+$(".close_btn").click(function(){
+		$("#img_holder").hide();
+		$("#image_loader").html("");		
+});
+<!-- $("#image_loader").click(function(){ -->
+		<!-- $("#img_holder").hide(); -->
+		<!-- $("#image_loader").html("");	 -->
+<!-- }); -->
+$(".next").click(function(){
+		var img_src = $("#image_loader img").attr('src');
+		var val = img_src.replace(/[^0-9]/g,'');
+		if(val == 8){
+			val = 1;
+		}else{
+			val++;
+		}
+		$("#image_loader").html("<img class='img-fluid img-thumbnail' src='images/"+val+".png'/>");
+});
+$(".prev").click(function(){
+		var img_src = $("#image_loader img").attr('src');
+		var val = img_src.replace(/[^0-9]/g,'');
+		if(val == 1){
+			val = 8;
+		}else{
+			val--;
+		}
+		$("#image_loader").html("<img class='img-fluid img-thumbnail' src='images/"+val+".png'/>");
+});
+});
+</script>
+<body>
+<div class="container-fluid">
+	<div class="header">
+		<div class="hdr-txt1">Responsive Image Gallery</div>
+		<div class="hdr-txt2">Resize the browser window to see the effect.</div>
+	</div>
+	<div class="row" id="gallery">
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/1.png" id="img1" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/2.png" id="img2" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/3.png" id="img3" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/4.png" id="img4" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/5.png" id="img5" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/6.png" id="img6" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/7.png" id="img7" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+		<!-- <div class="col-lg-3 col-md-4 col-sm-6"> -->
+		<div class="col-3">
+			<div class="image-container" data-toggle="modal" data-target="#myModal">
+				<img class="image img-fluid img-thumbnail" src="images/8.png" id="img8" style="width:100%">
+				<div class="img_desc">Kinton</div>			
+			</div>
+		</div>
+	</div>
+	
+<!-- <div id="img_holder"> -->
+	<!-- <span class="close_btn">X</span>	 -->
+	<!-- <div class="large_img_container d-flex justify-content-between align-items-center"> -->
+		<!-- <span class="prev"><</span> -->
+		<!-- <div id="image_loader"></div> -->
+		<!-- <span class="next">></span> -->
+	<!-- </div>	 -->
+<!-- </div> -->
+
+<!-- Modal -->
+
+<!-- <i class="close_btn glyphicon glyphicon-remove" data-dismiss="modal"></i>   It needs bootstrap3-->  
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+		
+      <!-- Modal content-->
+	  
+      <div class="modal-content">
+        <!-- <div class="modal-header"> -->
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <!-- <h4 class="modal-title">Modal Header</h4> -->
+        <!-- </div> -->
+		
+        <div class="modal-body">
+          <!-- <p>Some text in the modal.</p> -->
+		  <button type="button" class="close_btn" data-dismiss="modal">&times;</button>
+		  <!-- <span class="close" data-dismiss="modal">&times;</span> -->
+		  <div class="d-flex justify-content-between align-items-center" style="height:auto">
+			<div class="prev"><</div>
+			<div id="image_loader"></div>
+			<div class="next">></div>
+		  </div>
+        </div>
+        <!-- <div class="modal-footer"> -->
+          <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <!-- </div> -->
+      </div>
+      
+    </div>
+  </div>
+	
+</div>
+</body>
+</html>
